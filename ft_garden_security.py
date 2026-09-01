@@ -7,7 +7,7 @@ class Plant:
     ) -> None:
         self._name = name
         if starting_height >= 0:
-            self._height = starting_height
+            self._height = round(starting_height, 1)
         else:
             print(f"{self._name}: Error, height can't be negative")
         if starting_age >= 0:
@@ -20,7 +20,7 @@ class Plant:
         )
 
     def grow(self, amount: float = 0.8) -> None:
-        self._height = self._height + amount
+        self._height = round(self._height + amount, 1)
 
     def show(self):
         print(
@@ -32,9 +32,9 @@ class Plant:
         self._current_age = self._current_age + 1
         self.grow()
 
-    def set_heigth(self, new_height: int) -> None:
+    def set_height(self, new_height: float) -> None:
         if new_height >= 0:
-            self._height = new_height
+            self._height = round(new_height, 1)
             print(f"Height updated: {self._height}cm")
         else:
             print(
@@ -65,12 +65,12 @@ if __name__ == "__main__":
 
     print("")
 
-    rose.set_heigth(25)
+    rose.set_height(25)
     rose.set_age(30)
 
     print("")
 
-    rose.set_heigth(-5)
+    rose.set_height(-5)
     rose.set_age(-5)
 
     print("")

@@ -3,11 +3,11 @@
 class Plant:
     def __init__(self, name: str, starting_height: float, starting_age: int) -> None:
         self.name = name
-        self.height = starting_height
+        self.height = round(starting_height, 1)
         self.age = starting_age
 
     def grow(self, amount: float = 0.8) -> None:
-        self.height = self.height + amount
+        self.height = round(self.height + amount, 1)
 
     def show(self):
         print(f"Created: {self.name}: {self.height}cm, {self.age} days old")
